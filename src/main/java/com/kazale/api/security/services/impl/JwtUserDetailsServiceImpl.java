@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.kazale.api.InicializarBranch;
 import com.kazale.api.security.JwtUserFactory;
 import com.kazale.api.security.entities.Usuario;
 import com.kazale.api.security.services.UsuarioService;
@@ -24,6 +25,7 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
 		if (funcionario.isPresent()) {
 			return JwtUserFactory.create(funcionario.get());
+					
 		}
 
 		throw new UsernameNotFoundException("Email não encontrado.");

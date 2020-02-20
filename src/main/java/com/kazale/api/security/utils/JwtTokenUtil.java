@@ -152,5 +152,7 @@ public class JwtTokenUtil {
 		return Jwts.builder().setClaims(claims).setExpiration(gerarDataExpiracao())
 				.signWith(SignatureAlgorithm.HS512, secret).compact();
 	}
-
+	public void printMsg() {
+		System.out.println("Imprimir class JwtTokenUtil");
+	}
 }

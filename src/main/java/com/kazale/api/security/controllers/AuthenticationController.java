@@ -58,6 +58,11 @@ public class AuthenticationController {
 	public ResponseEntity<Response<TokenDto>> gerarTokenJwt(@Valid @RequestBody JwtAuthenticationDto authenticationDto,
 			BindingResult result) throws AuthenticationException {
 		Response<TokenDto> response = new Response<TokenDto>();
+		
+		System.out.println("=======================================");
+		System.out.println("class AuthenticationController         ");
+		System.out.println("Versão que vou alterar na branch criada");
+		System.out.println("=======================================");
 
 		if (result.hasErrors()) {
 			log.error("Erro validando lançamento: {}", result.getAllErrors());

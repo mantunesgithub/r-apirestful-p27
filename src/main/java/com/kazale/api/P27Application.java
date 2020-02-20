@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import com.kazale.api.security.entities.Usuario;
 import com.kazale.api.security.enums.PerfilEnum;
 import com.kazale.api.security.repositories.UsuarioRepository;
+import com.kazale.api.security.utils.JwtTokenUtil;
 import com.kazale.api.utils.SenhaUtils;
 
 @SpringBootApplication
@@ -24,7 +25,6 @@ public class P27Application {
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
-			System.out.println("Versão com pau");
 			Usuario usuario = new Usuario();
 			usuario.setEmail("usuario@email.com");
 			usuario.setPerfil(PerfilEnum.ROLE_USUARIO);
@@ -36,7 +36,11 @@ public class P27Application {
 			admin.setPerfil(PerfilEnum.ROLE_ADMIN);
 			admin.setSenha(SenhaUtils.gerarBCrypt("123456"));
 			this.usuarioRepository.save(admin);
+//
+// Inclusao de print			
 			
+			JwtTokenUtil jtu = new JwtTokenUtil();
+			jtu.printMsg();
 		};
 	}
 }
