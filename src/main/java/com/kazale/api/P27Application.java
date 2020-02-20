@@ -24,7 +24,7 @@ public class P27Application {
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
-			
+			System.out.println("Versão com pau");
 			Usuario usuario = new Usuario();
 			usuario.setEmail("usuario@email.com");
 			usuario.setPerfil(PerfilEnum.ROLE_USUARIO);
